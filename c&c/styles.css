@@ -1,0 +1,332 @@
+/* General styles */
+/* Background Image Adjustments */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    background-image: url('start2.jpeg.jpg');
+    background-size: contain; /* Make background image smaller */
+    background-position: center;
+    background-repeat: no-repeat; /* Ensure no repeat of the image */
+    transition: background-image 0.5s ease;
+}
+
+
+.container {
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    position: relative;
+    background-image: url('cal.jpeg.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    border-radius: 5px;
+    color: transparent;
+    font-weight: bold;
+}
+
+/* General token styles */
+.token {
+    width: 35px; /* Adjust size to fit your board */
+    height: 35px;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; /* Optional: Makes tokens circular */
+    margin-left: -20px;  /* Move token slightly left */
+}
+
+/* Specific player tokens with images */
+.token1 {
+    background-image: url('mushroom1.png.jpg'); /* Player 1 token image */
+    margin-left: -20px;  /* Move Player 1 token slightly left */
+}
+
+.token2 {
+    background-image: url('mushroom2.png.jpg'); /* Player 2 token image */
+    margin-left: -20px;  /* Move Player 2 token slightly left */
+}
+
+/* .token3 {
+    background-image: url('images/coin3.png'); Player 3 token image
+}
+
+.token4 {
+    background-image: url('images/coin4.png'); Player 4 token image
+} */
+
+
+/* General Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Player Details */
+#player-details {
+    margin-top: 20px;
+}
+
+.player-config {
+    margin-bottom: 10px;
+}
+
+.player-config label {
+    margin-right: 10px;
+}
+
+.token-preview {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.theme-options button {
+    margin: 10px;
+    font-size: 1.1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Themes */
+.theme-forest .board {
+    background-color: #228B22;
+}
+
+.theme-flowers .board {
+    background-color: #FFB6C1;
+}
+
+.theme-fire .board {
+    background-color: #FF4500;
+}
+
+body.theme-forest {
+    background-image: url('forest.jpeg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body.theme-flowers {
+    background-image: url('flower.jpeg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body.theme-fire {
+    background-image: url('fire.jpeg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Victory Modal */
+#victory-modal {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#victory-modal.hidden {
+    opacity: 0;
+}
+
+#victory-modal .modal-content {
+    padding: 40px;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#victory-modal h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#restart-game {
+    background-color: #FF6347;
+}
+
+#restart-game:hover {
+    background-color: #e5533e;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .board {
+        max-width: 80%;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+/* Updated styles for Start Game button */
+/* Updated styles for Start Game button */
+#start-game {
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 16px; /* Smaller font size */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+#start-game:hover {
+    background-color: #0056b3;
+}
+
+/* Adjusted modal style for better background visibility */
+#welcome-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Make background fully transparent */
+}
+
+#welcome-modal .modal-content {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: center;
+}
+
+/* Move down the Start Button */
+#start-game {
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+    margin-top: 20.5%; /* Move the button further down */
+}
+
+#start-game:hover {
+    background-color: #007bff;
+}
+
+/* Add this to your CSS */
+.dice-image {
+    width: 50px; /* Adjust the size of the dice image */
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.dice-image:hover {
+    transform: scale(1.1); /* Slightly scale the dice image on hover for effect */
+}
+
+/* Styling for the action buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.action-buttons button {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+    background-color: #e5533e;
+}
+
+
+

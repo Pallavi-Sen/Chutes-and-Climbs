@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chutes and Climbs</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Welcome Modal with only Start Game button -->
+    <div id="welcome-modal" class="modal">
+        <button id="start-game">Start Game</button>
+    </div>
+
+    <!-- Theme Selection Modal -->
+    <div id="theme-selection-modal" class="modal hidden">
+        <div class="modal-content">
+            <p>Select a theme to start the game:</p>
+            <div class="theme-options">
+                <button data-theme="forest">Forest</button>
+                <button data-theme="flowers">Flowers</button>
+                <button data-theme="fire">Fire</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div class="container hidden" id="game-container">
+        <h1>Chutes and Climbs</h1>
+        <div class="board" id="game-board"></div>
+        <div class="controls">
+            <p id="current-player">Current Player: Player 1</p>
+            <img id="roll-dice" src="dice1.png" alt="Roll Dice" class="dice-image">
+            <p id="dice-result">Dice Result: -</p>
+            <!-- Buttons Below Dice Result -->
+        <div class="action-buttons">
+            <button id="restart-game" onclick="restartGame()">Restart Game</button>
+            <button id="go-to-first-page" onclick="goToFirstPage()">Go to First Page</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Victory Modal -->
+    <div id="victory-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="winner-message">Congratulations Player X,you Won!🎉</h2>
+            <button id="restart-game">Restart Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
