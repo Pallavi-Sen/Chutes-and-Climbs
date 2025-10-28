@@ -26,6 +26,7 @@ CSS for styling and visual effects.
 JavaScript for game logic (die rolls, token movement, chute/climb checks).
 
 No backend required — runs fully in the browser.
+
 #How to Use / Play
 
 Clone or download the repository.
